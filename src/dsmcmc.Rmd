@@ -3,28 +3,60 @@ title: "dsmcmc"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## Markov Chain Monte Carlo with Metropolis Hasting Sampler
-
-This is a simple tutorial to illustrate how to use R to combine a dateset of interest with a model and generate posterior distributions of parameters of interest. 
 
 
-## Data set
+## Markov Chain Monte Carlo with Metropolis-Hastings Sampler
 
-We will first import a dataset that has an observation of interest with covariates. In this case, we will use pesticide body burdens in amphibians. We will combine this with a model that also 
+This is a simple tutorial to illustrate how to use simulation in R to combine a dataset of interest with a model and generate posterior distributions of parameters of interest. Metropolis-Hastings is a very general Markov chain sampler and perhaps the easiest to understand and explain.
+
+We need a dataset and a model to get started. The dataset will have (lab or field) observations of the phenomena of interest; the model will make in silico predictions of the same phenomena of interest.
+
+## The data set
+
+We will first import a dataset that has semi-field observations of pesticide body burdens in terrestrial amphibians with covariates. In this case, we will use pesticide body burdens in amphibians. We will combine this with a model that also uses some of these covariates and makes predictions of amphibian pesticide body burdens.
+
 ```{r cars}
 summary(cars)
 ```
 
-## Including Plots
+## The model
 
-You can also embed plots, for example:
+We will first import a dataset that has semi-field observations of pesticide body burdens in terrestrial amphibians with covariates. In this case, we will use pesticide body burdens in amphibians. We will combine this with a model that also uses some of these covariates and makes predictions of amphibian pesticide body burdens.
+
+```{r cars}
+summary(cars)
+```
+
+## Setting model priors for input parameters
+
+We will first import a dataset that has semi-field observations of pesticide body burdens in terrestrial amphibians with covariates. In this case, we will use pesticide body burdens in amphibians. We will combine this with a model that also uses some of these covariates and makes predictions of amphibian pesticide body burdens.
+
+```{r cars}
+summary(cars)
+```
+
+## Metropolis-Hastings Sampling
+
+Generally, Monte Carlo sampling generates independent samples from the input variables when simulating. However, Metropolis-Hastings is significantly different in that it generates correlated variables from one draw to the next. This is a big switch from more traditional Monte Carlo approaches based on importance sampling.
 
 ```{r pressure, echo=FALSE}
 plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Likelihood calculation
+
+Generally, Monte Carlo sampling generates independent samples from the input variables when simulating. However, Metropolis-Hastings is significantly different in that it generates correlated variables from one draw to the next. This is a big switch from more traditional Monte Carlo approaches based on importance sampling.
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+## Rejection!: The sampler just isn't that in to you
+
+Generally, Monte Carlo sampling generates independent samples from the input variables when simulating. However, Metropolis-Hastings is significantly different in that it generates correlated variables from one draw to the next. This is a big switch from more traditional Monte Carlo approaches based on importance sampling.
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
