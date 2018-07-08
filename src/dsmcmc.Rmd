@@ -1,0 +1,30 @@
+---
+title: "dsmcmc"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Markov Chain Monte Carlo with Metropolis Hasting Sampler
+
+This is a simple tutorial to illustrate how to use R to combine a dateset of interest with a model and generate posterior distributions of parameters of interest. 
+
+
+## Data set
+
+We will first import a dataset that has an observation of interest with covariates. In this case, we will use pesticide body burdens in amphibians. We will combine this with a model that also 
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
