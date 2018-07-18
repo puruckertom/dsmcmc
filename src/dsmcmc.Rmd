@@ -18,10 +18,10 @@ To run it locally modify one of the Sys.info()[4] blocks below with your compute
 Sys.info()[4]
 
 if(Sys.info()[4]=="DZ2626UTPURUCKE"){
-  amphibdir <- "d:\\git\\amphib_dermal_collation\\"
+  amphibdir <- "d:\\git\\dsmcmc\\"
 }
 if(Sys.info()[4]=="Toms-Air"){
-  path.expand("~/git/amphib_dermal_collation/")
+  path.expand("~/git/dsmcmc/")
 }
 
 amphibdir_data_in <- paste(amphibdir,'data_in/',sep='')
@@ -44,7 +44,7 @@ We will first import a dataset that has semi-field experimental observations of 
 
 ```{r data_set}
 # import data 
-combined_data_filename <- paste(amphibdir_data_out,"amphib_dermal_collated.csv", sep="")
+combined_data_filename <- paste(amphibdir_data_in,"amphib_dermal_collated.csv", sep="")
 combined_data <- read.csv(combined_data_filename)
 which(combined_data$tissue_conc_ugg==min(combined_data$tissue_conc_ugg))
 # delete 593:601 -- application units are off, for #797 measurements units are off
