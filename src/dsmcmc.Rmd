@@ -5,7 +5,18 @@ output: html_document
 
 ## Some preliminaries
 
+You can clone this repo with git or download the zip file.
+
 ```{r prelims}
+# git clone https://github.com/puruckertom/dsmcmc.git
+# https://github.com/puruckertom/dsmcmc/archive/master.zip
+```
+
+To run it locally modify one of the Sys.info()[4] blocks below with your computer name and the location of the directory with these files.
+
+```{r prelims}
+Sys.info()[4]
+
 if(Sys.info()[4]=="DZ2626UTPURUCKE"){
   amphibdir <- "d:\\git\\amphib_dermal_collation\\"
 }
@@ -177,7 +188,7 @@ Now we are ready to run the simulations. We need to provide some starting values
 
 ```{r run_sims, echo=FALSE}
 startvalue = c(1,2) # give some initial values for dermal_af and sd
-iterations = 100000
+iterations = 50000
 chain = run_metropolis_MCMC(startvalue, iterations)
 ```
 
@@ -186,7 +197,7 @@ We saved the results in the chain function. For our purposes today we are intere
 ```{r acceptance, echo=FALSE}
 dim(chain)
 summary(chain)
-burnIn = 50000
+burnIn = 5000
 acceptance = 1-mean(duplicated(chain[-(1:burnIn),1:2]))
 acceptance
 chain_burnfree <- chain[-(1:burnIn),]
